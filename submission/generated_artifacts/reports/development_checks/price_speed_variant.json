@@ -1,0 +1,171 @@
+{
+  "batching": {
+    "accepted_batches": 550,
+    "average_batch_size": 1.004,
+    "dispatched_shipments": 552,
+    "efficiency": 0.003623
+  },
+  "costs": {
+    "contingency_exceeded": false,
+    "contingency_threshold_cents": 3300000,
+    "contingency_used": false,
+    "dispatch_cents": 360809,
+    "over_contingency_cents": 0,
+    "over_reference_cents": 0,
+    "penalty_cents": 0,
+    "reference_budget_cents": 3000000,
+    "total_cents": 360809,
+    "upgrade_cents": 0
+  },
+  "counts": {
+    "accepted_attempts": 552,
+    "accepted_batches": 550,
+    "admitted": 500,
+    "delivered": 500,
+    "failed_attempts": 52,
+    "rejected_dispatches": 0,
+    "returned_to_vault": 0,
+    "successful_attempts": 500,
+    "unresolved": 0,
+    "voluntary_hold_breaches": 0
+  },
+  "diagnostics": {
+    "carrier_dispatch": {
+      "DEV_0_3": {
+        "accepted_attempts": 2,
+        "accepted_batches": 2,
+        "cost_cents": 952
+      },
+      "DEV_1_3": {
+        "accepted_attempts": 493,
+        "accepted_batches": 492,
+        "cost_cents": 266343
+      },
+      "DEV_2_3": {
+        "accepted_attempts": 56,
+        "accepted_batches": 55,
+        "cost_cents": 93069
+      },
+      "DEV_3_3": {
+        "accepted_attempts": 1,
+        "accepted_batches": 1,
+        "cost_cents": 445
+      }
+    },
+    "dispatch_rejections": {
+      "BATCH_CAPACITY_EXCEEDED": 0,
+      "CAPABILITY_UNSUPPORTED": 0,
+      "DUPLICATE_SHIPMENT": 0,
+      "EMPTY_BATCH": 0,
+      "MIXED_ATTEMPT_NUMBER": 0,
+      "MIXED_DELIVERY_CLUSTER": 0,
+      "MIXED_ZONE": 0,
+      "NO_AVAILABLE_UNIT": 0,
+      "OUTSIDE_OPERATING_WINDOW": 0,
+      "SHIPMENT_NOT_READY": 0,
+      "TERMINAL_SHIPMENT": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_SHIPMENT": 0,
+      "ZONE_UNSUPPORTED": 0
+    },
+    "status_detail": null,
+    "upgrade_rejections": {
+      "INVALID_QUANTITY": 0,
+      "PER_PERIOD_LIMIT_EXCEEDED": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_UPGRADE": 0,
+      "UNSUPPORTED_UPGRADE": 0
+    }
+  },
+  "failures": {
+    "attempt_failure_rate": 0.094203,
+    "by_reason": {
+      "CUSTOMER_ABSENT": 42,
+      "INACCESSIBLE_ROUTE": 0,
+      "OPERATIONAL_DELAY": 10
+    },
+    "delivery_failure_rate": 0.0
+  },
+  "integrity": {
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79",
+    "protected_files_pristine": true
+  },
+  "lead_time_minutes": {
+    "max": 3224,
+    "mean": 220.434,
+    "p50": 50,
+    "p95": 1531
+  },
+  "rcp": {
+    "by_audience": {
+      "INFLUENCER": {
+        "eligible_recipients": 11,
+        "submitted_opinions": 10,
+        "weighted_score": 10.0
+      },
+      "NORMAL": {
+        "eligible_recipients": 462,
+        "submitted_opinions": 64,
+        "weighted_score": 10.0
+      },
+      "VIP": {
+        "eligible_recipients": 27,
+        "submitted_opinions": 18,
+        "weighted_score": 10.0
+      }
+    },
+    "submitted_opinions": 92,
+    "total_impact_weight_bps": 1800000,
+    "unweighted_score": 10.0,
+    "weighted_score": 10.0
+  },
+  "resources": {
+    "cpu_seconds": 3.0625,
+    "peak_rss_bytes": 31268864
+  },
+  "scenario": {
+    "admission_end": "2026-04-05T00:00:00-05:00",
+    "scenario_id": "SIMPLE-0635AF62",
+    "seed_fingerprint": "sha256:e9842b5f2c19c5d20be3ffe74a967859a988009215e94c572bec609f96c1b7a6",
+    "simulation_end": "2026-04-22T18:00:00-05:00",
+    "simulation_start": "2026-01-05T00:00:00-05:00"
+  },
+  "schema_version": "0.4.0",
+  "sla": {
+    "breach_rate": 0.0,
+    "breached": 0,
+    "by_product": {
+      "BUSINESS": {
+        "admitted": 90,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "SME": {
+        "admitted": 117,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "STANDARD": {
+        "admitted": 266,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "VIP_BLACK": {
+        "admitted": 27,
+        "breach_rate": 0.0,
+        "breached": 0
+      }
+    }
+  },
+  "spec_version": "0.4.0",
+  "status": "COMPLETED",
+  "upgrades": {
+    "accepted_decisions": 0,
+    "accepted_quantity_by_type": {
+      "EXPANDED_CAPACITY": 0,
+      "EXTRA_UNIT": 0,
+      "SPEED_SHIFT": 0
+    },
+    "rejected_decisions": 0
+  }
+}

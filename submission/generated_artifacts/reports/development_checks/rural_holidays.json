@@ -1,0 +1,166 @@
+{
+  "batching": {
+    "accepted_batches": 552,
+    "average_batch_size": 1.0,
+    "dispatched_shipments": 552,
+    "efficiency": 0.0
+  },
+  "costs": {
+    "contingency_exceeded": false,
+    "contingency_threshold_cents": 3300000,
+    "contingency_used": false,
+    "dispatch_cents": 745495,
+    "over_contingency_cents": 0,
+    "over_reference_cents": 0,
+    "penalty_cents": 0,
+    "reference_budget_cents": 3000000,
+    "total_cents": 745495,
+    "upgrade_cents": 0
+  },
+  "counts": {
+    "accepted_attempts": 552,
+    "accepted_batches": 552,
+    "admitted": 500,
+    "delivered": 500,
+    "failed_attempts": 52,
+    "rejected_dispatches": 0,
+    "returned_to_vault": 0,
+    "successful_attempts": 500,
+    "unresolved": 0,
+    "voluntary_hold_breaches": 0
+  },
+  "diagnostics": {
+    "carrier_dispatch": {
+      "DEV_0_1": {
+        "accepted_attempts": 178,
+        "accepted_batches": 178,
+        "cost_cents": 307450
+      },
+      "DEV_2_1": {
+        "accepted_attempts": 199,
+        "accepted_batches": 199,
+        "cost_cents": 189306
+      },
+      "DEV_3_1": {
+        "accepted_attempts": 175,
+        "accepted_batches": 175,
+        "cost_cents": 248739
+      }
+    },
+    "dispatch_rejections": {
+      "BATCH_CAPACITY_EXCEEDED": 0,
+      "CAPABILITY_UNSUPPORTED": 0,
+      "DUPLICATE_SHIPMENT": 0,
+      "EMPTY_BATCH": 0,
+      "MIXED_ATTEMPT_NUMBER": 0,
+      "MIXED_DELIVERY_CLUSTER": 0,
+      "MIXED_ZONE": 0,
+      "NO_AVAILABLE_UNIT": 0,
+      "OUTSIDE_OPERATING_WINDOW": 0,
+      "SHIPMENT_NOT_READY": 0,
+      "TERMINAL_SHIPMENT": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_SHIPMENT": 0,
+      "ZONE_UNSUPPORTED": 0
+    },
+    "status_detail": null,
+    "upgrade_rejections": {
+      "INVALID_QUANTITY": 0,
+      "PER_PERIOD_LIMIT_EXCEEDED": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_UPGRADE": 0,
+      "UNSUPPORTED_UPGRADE": 0
+    }
+  },
+  "failures": {
+    "attempt_failure_rate": 0.094203,
+    "by_reason": {
+      "CUSTOMER_ABSENT": 41,
+      "INACCESSIBLE_ROUTE": 7,
+      "OPERATIONAL_DELAY": 4
+    },
+    "delivery_failure_rate": 0.0
+  },
+  "integrity": {
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79",
+    "protected_files_pristine": true
+  },
+  "lead_time_minutes": {
+    "max": 3352,
+    "mean": 309.99,
+    "p50": 130,
+    "p95": 1644
+  },
+  "rcp": {
+    "by_audience": {
+      "INFLUENCER": {
+        "eligible_recipients": 13,
+        "submitted_opinions": 13,
+        "weighted_score": 10.0
+      },
+      "NORMAL": {
+        "eligible_recipients": 461,
+        "submitted_opinions": 90,
+        "weighted_score": 10.0
+      },
+      "VIP": {
+        "eligible_recipients": 26,
+        "submitted_opinions": 20,
+        "weighted_score": 9.75
+      }
+    },
+    "submitted_opinions": 123,
+    "total_impact_weight_bps": 2340000,
+    "unweighted_score": 9.959,
+    "weighted_score": 9.957
+  },
+  "resources": {
+    "cpu_seconds": 3.921875,
+    "peak_rss_bytes": 30658560
+  },
+  "scenario": {
+    "admission_end": "2026-04-05T00:00:00-05:00",
+    "scenario_id": "SIMPLE-0635AF62",
+    "seed_fingerprint": "sha256:e9842b5f2c19c5d20be3ffe74a967859a988009215e94c572bec609f96c1b7a6",
+    "simulation_end": "2026-04-22T18:00:00-05:00",
+    "simulation_start": "2026-01-05T00:00:00-05:00"
+  },
+  "schema_version": "0.4.0",
+  "sla": {
+    "breach_rate": 0.004,
+    "breached": 2,
+    "by_product": {
+      "BUSINESS": {
+        "admitted": 98,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "SME": {
+        "admitted": 113,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "STANDARD": {
+        "admitted": 263,
+        "breach_rate": 0.0,
+        "breached": 0
+      },
+      "VIP_BLACK": {
+        "admitted": 26,
+        "breach_rate": 0.076923,
+        "breached": 2
+      }
+    }
+  },
+  "spec_version": "0.4.0",
+  "status": "COMPLETED",
+  "upgrades": {
+    "accepted_decisions": 0,
+    "accepted_quantity_by_type": {
+      "EXPANDED_CAPACITY": 0,
+      "EXTRA_UNIT": 0,
+      "SPEED_SHIFT": 0
+    },
+    "rejected_decisions": 0
+  }
+}

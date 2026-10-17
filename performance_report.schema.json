@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/log-8092/performance-report-0.4.0.schema.json",
+  "title": "LOG-8092 Performance Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "spec_version",
+    "scenario",
+    "status",
+    "counts",
+    "sla",
+    "failures",
+    "rcp",
+    "costs",
+    "upgrades",
+    "lead_time_minutes",
+    "batching",
+    "diagnostics",
+    "resources",
+    "integrity"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.4.0"},
+    "spec_version": {"const": "0.4.0"},
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario_id", "seed_fingerprint", "simulation_start", "admission_end", "simulation_end"],
+      "properties": {
+        "scenario_id": {"type": "string"},
+        "seed_fingerprint": {"type": "string"},
+        "simulation_start": {"type": "string", "format": "date-time"},
+        "admission_end": {"type": "string", "format": "date-time"},
+        "simulation_end": {"type": "string", "format": "date-time"}
+      }
+    },
+    "status": {
+      "enum": ["COMPLETED", "STRATEGY_ERROR", "TIMEOUT", "OOM", "INTEGRITY_ERROR"]
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admitted", "delivered", "returned_to_vault", "unresolved", "accepted_attempts", "successful_attempts", "failed_attempts", "accepted_batches", "rejected_dispatches", "voluntary_hold_breaches"],
+      "properties": {
+        "admitted": {"type": "integer", "minimum": 0},
+        "delivered": {"type": "integer", "minimum": 0},
+        "returned_to_vault": {"type": "integer", "minimum": 0},
+        "unresolved": {"type": "integer", "minimum": 0},
+        "accepted_attempts": {"type": "integer", "minimum": 0},
+        "successful_attempts": {"type": "integer", "minimum": 0},
+        "failed_attempts": {"type": "integer", "minimum": 0},
+        "accepted_batches": {"type": "integer", "minimum": 0},
+        "rejected_dispatches": {"type": "integer", "minimum": 0},
+        "voluntary_hold_breaches": {"type": "integer", "minimum": 0}
+      }
+    },
+    "sla": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["breached", "breach_rate", "by_product"],
+      "properties": {
+        "breached": {"type": "integer", "minimum": 0},
+        "breach_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "by_product": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["VIP_BLACK", "BUSINESS", "SME", "STANDARD"],
+          "properties": {
+            "VIP_BLACK": {"$ref": "#/$defs/slaBreakdown"},
+            "BUSINESS": {"$ref": "#/$defs/slaBreakdown"},
+            "SME": {"$ref": "#/$defs/slaBreakdown"},
+            "STANDARD": {"$ref": "#/$defs/slaBreakdown"}
+          }
+        }
+      }
+    },
+    "failures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt_failure_rate", "delivery_failure_rate", "by_reason"],
+      "properties": {
+        "attempt_failure_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "delivery_failure_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "by_reason": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["INACCESSIBLE_ROUTE", "CUSTOMER_ABSENT", "OPERATIONAL_DELAY"],
+          "properties": {
+            "INACCESSIBLE_ROUTE": {"type": "integer", "minimum": 0},
+            "CUSTOMER_ABSENT": {"type": "integer", "minimum": 0},
+            "OPERATIONAL_DELAY": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "rcp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weighted_score", "unweighted_score", "submitted_opinions", "total_impact_weight_bps", "by_audience"],
+      "properties": {
+        "weighted_score": {"type": ["number", "null"], "minimum": 1, "maximum": 10},
+        "unweighted_score": {"type": ["number", "null"], "minimum": 1, "maximum": 10},
+        "submitted_opinions": {"type": "integer", "minimum": 0},
+        "total_impact_weight_bps": {"type": "integer", "minimum": 0},
+        "by_audience": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["VIP", "NORMAL", "INFLUENCER"],
+          "properties": {
+            "VIP": {"$ref": "#/$defs/rcpBreakdown"},
+            "NORMAL": {"$ref": "#/$defs/rcpBreakdown"},
+            "INFLUENCER": {"$ref": "#/$defs/rcpBreakdown"}
+          }
+        }
+      }
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_budget_cents", "contingency_threshold_cents", "dispatch_cents", "upgrade_cents", "penalty_cents", "total_cents", "over_reference_cents", "over_contingency_cents", "contingency_used", "contingency_exceeded"],
+      "properties": {
+        "reference_budget_cents": {"type": "integer", "minimum": 0},
+        "contingency_threshold_cents": {"type": "integer", "minimum": 0},
+        "dispatch_cents": {"type": "integer", "minimum": 0},
+        "upgrade_cents": {"type": "integer", "minimum": 0},
+        "penalty_cents": {"type": "integer", "minimum": 0},
+        "total_cents": {"type": "integer", "minimum": 0},
+        "over_reference_cents": {"type": "integer", "minimum": 0},
+        "over_contingency_cents": {"type": "integer", "minimum": 0},
+        "contingency_used": {"type": "boolean"},
+        "contingency_exceeded": {"type": "boolean"}
+      }
+    },
+    "upgrades": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted_decisions", "rejected_decisions", "accepted_quantity_by_type"],
+      "properties": {
+        "accepted_decisions": {"type": "integer", "minimum": 0},
+        "rejected_decisions": {"type": "integer", "minimum": 0},
+        "accepted_quantity_by_type": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["EXTRA_UNIT", "SPEED_SHIFT", "EXPANDED_CAPACITY"],
+          "properties": {
+            "EXTRA_UNIT": {"type": "integer", "minimum": 0},
+            "SPEED_SHIFT": {"type": "integer", "minimum": 0},
+            "EXPANDED_CAPACITY": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "lead_time_minutes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mean", "p50", "p95", "max"],
+      "properties": {
+        "mean": {"type": ["number", "null"], "minimum": 0},
+        "p50": {"type": ["integer", "null"], "minimum": 0},
+        "p95": {"type": ["integer", "null"], "minimum": 0},
+        "max": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "batching": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dispatched_shipments", "accepted_batches", "average_batch_size", "efficiency"],
+      "properties": {
+        "dispatched_shipments": {"type": "integer", "minimum": 0},
+        "accepted_batches": {"type": "integer", "minimum": 0},
+        "average_batch_size": {"type": "number", "minimum": 0},
+        "efficiency": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status_detail", "dispatch_rejections", "upgrade_rejections"],
+      "properties": {
+        "status_detail": {"type": ["string", "null"]},
+        "dispatch_rejections": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["UNKNOWN_CARRIER", "EMPTY_BATCH", "DUPLICATE_SHIPMENT", "UNKNOWN_SHIPMENT", "TERMINAL_SHIPMENT", "SHIPMENT_NOT_READY", "MIXED_DELIVERY_CLUSTER", "MIXED_ZONE", "MIXED_ATTEMPT_NUMBER", "ZONE_UNSUPPORTED", "CAPABILITY_UNSUPPORTED", "BATCH_CAPACITY_EXCEEDED", "OUTSIDE_OPERATING_WINDOW", "NO_AVAILABLE_UNIT"],
+          "properties": {
+            "UNKNOWN_CARRIER": {"type": "integer", "minimum": 0},
+            "EMPTY_BATCH": {"type": "integer", "minimum": 0},
+            "DUPLICATE_SHIPMENT": {"type": "integer", "minimum": 0},
+            "UNKNOWN_SHIPMENT": {"type": "integer", "minimum": 0},
+            "TERMINAL_SHIPMENT": {"type": "integer", "minimum": 0},
+            "SHIPMENT_NOT_READY": {"type": "integer", "minimum": 0},
+            "MIXED_DELIVERY_CLUSTER": {"type": "integer", "minimum": 0},
+            "MIXED_ZONE": {"type": "integer", "minimum": 0},
+            "MIXED_ATTEMPT_NUMBER": {"type": "integer", "minimum": 0},
+            "ZONE_UNSUPPORTED": {"type": "integer", "minimum": 0},
+            "CAPABILITY_UNSUPPORTED": {"type": "integer", "minimum": 0},
+            "BATCH_CAPACITY_EXCEEDED": {"type": "integer", "minimum": 0},
+            "OUTSIDE_OPERATING_WINDOW": {"type": "integer", "minimum": 0},
+            "NO_AVAILABLE_UNIT": {"type": "integer", "minimum": 0}
+          }
+        },
+        "upgrade_rejections": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["UNKNOWN_CARRIER", "UNKNOWN_UPGRADE", "UNSUPPORTED_UPGRADE", "INVALID_QUANTITY", "PER_PERIOD_LIMIT_EXCEEDED"],
+          "properties": {
+            "UNKNOWN_CARRIER": {"type": "integer", "minimum": 0},
+            "UNKNOWN_UPGRADE": {"type": "integer", "minimum": 0},
+            "UNSUPPORTED_UPGRADE": {"type": "integer", "minimum": 0},
+            "INVALID_QUANTITY": {"type": "integer", "minimum": 0},
+            "PER_PERIOD_LIMIT_EXCEEDED": {"type": "integer", "minimum": 0}
+          }
+        },
+        "carrier_dispatch": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["accepted_batches", "accepted_attempts", "cost_cents"],
+            "properties": {
+              "accepted_batches": {"type": "integer", "minimum": 0},
+              "accepted_attempts": {"type": "integer", "minimum": 0},
+              "cost_cents": {"type": "integer", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cpu_seconds", "peak_rss_bytes"],
+      "properties": {
+        "cpu_seconds": {"type": "number", "minimum": 0},
+        "peak_rss_bytes": {"type": "integer", "minimum": 0}
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_sha256", "protected_files_pristine"],
+      "properties": {
+        "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "protected_files_pristine": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "slaBreakdown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admitted", "breached", "breach_rate"],
+      "properties": {
+        "admitted": {"type": "integer", "minimum": 0},
+        "breached": {"type": "integer", "minimum": 0},
+        "breach_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "rcpBreakdown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible_recipients", "submitted_opinions", "weighted_score"],
+      "properties": {
+        "eligible_recipients": {"type": "integer", "minimum": 0},
+        "submitted_opinions": {"type": "integer", "minimum": 0},
+        "weighted_score": {"type": ["number", "null"], "minimum": 1, "maximum": 10}
+      }
+    }
+  }
+}

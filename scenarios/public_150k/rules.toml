@@ -1,0 +1,193 @@
+spec_version = "0.4.0"
+timezone = "America/Lima"
+
+[simulation]
+admission_days = 90
+dispatch_tick_minutes = 15
+max_voluntary_hold_minutes = 45
+drain_days_after_latest_deadline = 7
+shipment_callback_chunk_size = 512
+max_shipments = 400000
+planning_period_days = 30
+planning_period_count = 3
+datetime_precision_seconds = 1
+
+[dispatch]
+canonicalize_shipment_ids = true
+rejection_precedence = [
+  "UNKNOWN_CARRIER",
+  "EMPTY_BATCH",
+  "DUPLICATE_SHIPMENT",
+  "UNKNOWN_SHIPMENT",
+  "TERMINAL_SHIPMENT",
+  "SHIPMENT_NOT_READY",
+  "MIXED_DELIVERY_CLUSTER",
+  "MIXED_ZONE",
+  "MIXED_ATTEMPT_NUMBER",
+  "ZONE_UNSUPPORTED",
+  "CAPABILITY_UNSUPPORTED",
+  "BATCH_CAPACITY_EXCEEDED",
+  "OUTSIDE_OPERATING_WINDOW",
+  "NO_AVAILABLE_UNIT",
+]
+
+[batching]
+min_batch_size = 1
+cluster_requires_same_zone = true
+cluster_requires_same_attempt = true
+hold_breach_hard_gate = true
+
+[distances_km]
+URBANA = 12
+SUBURBANA = 35
+RURAL = 80
+REMOTA = 150
+
+[sla.VIP_BLACK]
+duration_minutes = 1440
+clock = "CONTINUOUS"
+days = [1, 2, 3, 4, 5, 6, 7]
+open = "00:00"
+close = "24:00"
+
+[sla.BUSINESS]
+duration_minutes = 2880
+clock = "BUSINESS"
+days = [1, 2, 3, 4, 5]
+open = "08:00"
+close = "17:00"
+
+[sla.SME]
+duration_minutes = 2880
+clock = "BUSINESS"
+days = [1, 2, 3, 4, 5, 6]
+open = "08:00"
+close = "20:00"
+
+[sla.STANDARD]
+duration_minutes = 4320
+clock = "BUSINESS"
+days = [1, 2, 3, 4, 5]
+open = "09:00"
+close = "18:00"
+
+[pricing]
+additional_card_cents = 120
+metal_security_cents = 450
+terminal_penalty_cents = 2000
+attempt_multipliers_bps = [10000, 5000, 10000]
+contingency_threshold_bps = 11000
+night_start = "20:00"
+night_end = "06:00"
+calendar_multiplier_applied_once = true
+rounding = "ROUND_HALF_UP_ONCE"
+
+[retry]
+max_attempts = 3
+wait_minutes = 1440
+
+[upgrade_policy]
+decision_atomic_by_quantity = true
+busy_extra_unit_on_expiry = "RETIRING"
+rejection_precedence = [
+  "UNKNOWN_CARRIER",
+  "UNKNOWN_UPGRADE",
+  "UNSUPPORTED_UPGRADE",
+  "INVALID_QUANTITY",
+  "PER_PERIOD_LIMIT_EXCEEDED",
+]
+
+[upgrades.EXTRA_UNIT]
+cost_cents = 40000
+max_per_carrier_period = 3
+
+[upgrades.SPEED_SHIFT]
+cost_cents = 60000
+multiplier_bps = 12500
+max_per_carrier_period = 1
+
+[upgrades.EXPANDED_CAPACITY]
+cost_cents = 35000
+multiplier_bps = 15000
+max_per_carrier_period = 1
+
+[failure]
+evaluation_order = ["INACCESSIBLE_ROUTE", "CUSTOMER_ABSENT", "OPERATIONAL_DELAY"]
+zone_modifier_applies_to = "CUSTOMER_ABSENT"
+calendar_modifiers_apply_to = "OPERATIONAL_DELAY"
+probability_cap_bps = 10000
+
+[failure.customer_absence_bps]
+attempt_1 = 700
+attempt_2 = 350
+attempt_3 = 150
+
+[failure.zone_modifier_bps]
+URBANA = 0
+SUBURBANA = 50
+RURAL = 150
+REMOTA = 300
+
+[failure.inaccessible_route_bps]
+URBANA = 0
+SUBURBANA = 0
+RURAL = 400
+REMOTA = 1200
+
+[failure.calendar_modifier_bps]
+sunday = 100
+holiday = 200
+
+[scenario_ranges]
+min_carriers = 4
+max_carriers = 6
+max_arrival_peak_multiplier_bps = 25000
+min_clustered_shipments_bps = 2000
+max_clustered_shipments_bps = 5000
+min_influencer_rate_bps = 100
+max_influencer_rate_bps = 500
+
+[rcp]
+influencer_rate_bps = 300
+undelivered_rating = 1
+delivered_floor_rating = 2
+on_time_boundary_rating = 6
+late_floor_ratio_bps = 15000
+
+[rcp.expectation.VIP_BLACK]
+min_full_satisfaction_ratio_bps = 2500
+max_full_satisfaction_ratio_bps = 4500
+
+[rcp.expectation.BUSINESS]
+min_full_satisfaction_ratio_bps = 3500
+max_full_satisfaction_ratio_bps = 6500
+
+[rcp.expectation.SME]
+min_full_satisfaction_ratio_bps = 4500
+max_full_satisfaction_ratio_bps = 7500
+
+[rcp.expectation.STANDARD]
+min_full_satisfaction_ratio_bps = 5500
+max_full_satisfaction_ratio_bps = 8500
+
+[rcp.audience.VIP]
+base_response_bps = 7000
+dissatisfaction_uplift_bps = 2000
+impact_weight_bps = 20000
+
+[rcp.audience.NORMAL]
+base_response_bps = 1800
+dissatisfaction_uplift_bps = 4200
+impact_weight_bps = 10000
+
+[rcp.audience.INFLUENCER]
+base_response_bps = 9000
+dissatisfaction_uplift_bps = 800
+impact_weight_bps = 80000
+
+[reporting]
+rate_decimal_places = 6
+mean_decimal_places = 3
+rcp_decimal_places = 3
+percentile_method = "NEAREST_RANK"
+integer_minute_rounding = "ROUND_HALF_UP"

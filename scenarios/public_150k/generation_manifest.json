@@ -1,0 +1,61 @@
+{
+  "generator_version": "0.4.0",
+  "parameters": {
+    "capacity_scale": 30,
+    "carrier_count": 5,
+    "holiday_count": 2,
+    "nominal_reference_budget_cents": 90000000,
+    "reference_budget_cents": 90000000,
+    "reference_cost_per_shipment_cents": 600,
+    "shipment_count": 150000,
+    "upgrades_enabled": false
+  },
+  "profile": "public_150k",
+  "public_files": {
+    "carriers.json": "322183649e7c1d37a6b30a8431b62ce838ac31cb08bf59cef4dc829314e5df75",
+    "holidays.csv": "a3943b22b5483363d1ff4d3bc17f823339e422634b94cc9ce268246c60d5a4d6",
+    "rules.toml": "92d09249b8e40fca256534c7b9a99a5e6b96118ad78489065cb444b2f3f7f2cd",
+    "scenario.toml": "da09b4621d6d5e9b7179e9111c654d26b66464a90b6eb912004c6f07f29735c6",
+    "shipments.csv": "0b1d0e0e989ca26d874b639ff7cd664423c00e410b2107dc6d059bd44c8d30e9"
+  },
+  "scenario_id": "PUBLIC-150K-264538C2",
+  "schema_version": "0.2.0",
+  "seed_fingerprint": "2a6d105f72bdc4d5e1ca9da3171789a846f72a984baddcd1339544e7f7d0f496",
+  "spec_version": "0.4.0",
+  "statistics": {
+    "arrival_event_count": 115035,
+    "carrier_count": 5,
+    "carrier_ids": [
+      "SUBURBAN_MOTO",
+      "COURIER_EXPRESS",
+      "LOGI_GLOBAL",
+      "VIP_FAST",
+      "ECO_POST"
+    ],
+    "cluster_count": 17535,
+    "clustered_shipment_count": 52500,
+    "clustered_shipments_bps": 3500,
+    "fleet_units": 600,
+    "holiday_dates": [
+      "2026-02-19",
+      "2026-02-22"
+    ],
+    "max_shipments_in_hour": 201,
+    "metal_count": 6784,
+    "non_empty_hours": 2160,
+    "product_counts": {
+      "BUSINESS": 27084,
+      "SME": 33009,
+      "STANDARD": 82335,
+      "VIP_BLACK": 7572
+    },
+    "shipment_count": 150000,
+    "total_batch_capacity": 15720,
+    "zone_counts": {
+      "REMOTA": 7382,
+      "RURAL": 17914,
+      "SUBURBANA": 37605,
+      "URBANA": 87099
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "candidate": "edwarddac.56@gmail.com",
+  "candidate_name": "Edward David Alarco Campos",
+  "models_and_tools": [
+    {
+      "tool": "Codex desktop",
+      "model": "gpt-6.1-sol"
+    },
+    {
+      "tool": "Python 3.12.14, biblioteca estándar",
+      "model": "no aplica"
+    },
+    {
+      "tool": "PowerShell y herramientas locales de archivos",
+      "model": "no aplica"
+    },
+    {
+      "tool": "pypdf, solo lectura del anexo PDF",
+      "model": "no aplica"
+    }
+  ],
+  "evaluated_file": "candidate_strategy.py",
+  "generated_artifacts": [
+    "generated_artifacts/assemble_delivery.py",
+    "generated_artifacts/export_conversation.py",
+    "generated_artifacts/prototypes/candidate_balanced.py",
+    "generated_artifacts/prototypes/candidate_batch15_balanced.py",
+    "generated_artifacts/prototypes/candidate_batch15_speed.py",
+    "generated_artifacts/prototypes/candidate_cost.py",
+    "generated_artifacts/prototypes/candidate_starter.py",
+    "generated_artifacts/reports/development_checks/cluster_burst.json",
+    "generated_artifacts/reports/development_checks/price_speed_variant.json",
+    "generated_artifacts/reports/development_checks/renamed_catalog.json",
+    "generated_artifacts/reports/development_checks/rural_holidays.json",
+    "generated_artifacts/reports/development_checks/summary.json",
+    "generated_artifacts/reports/final_150k.json",
+    "generated_artifacts/reports/final_5k.json",
+    "generated_artifacts/reports/report_balanced_150k.json",
+    "generated_artifacts/reports/report_balanced_5k.json",
+    "generated_artifacts/reports/report_batch15_5k.json",
+    "generated_artifacts/reports/report_batch15_balanced_5k.json",
+    "generated_artifacts/reports/report_cost_150k.json",
+    "generated_artifacts/reports/report_cost_5k.json",
+    "generated_artifacts/reports/report_starter_150k.json",
+    "generated_artifacts/reports/report_starter_5k.json",
+    "generated_artifacts/test_dispatch_contract.py",
+    "generated_artifacts/tests_result.txt",
+    "generated_artifacts/validate_variants.py",
+    "generated_artifacts/validation_summary.json"
+  ],
+  "conversation_files": [
+    "ai_conversations/session-01.json"
+  ],
+  "redactions": [],
+  "declaration": "Solución preparada con asistencia de IA y validada automáticamente. El candidato debe revisar, comprender y asumir la responsabilidad de la entrega antes de presentarla."
+}

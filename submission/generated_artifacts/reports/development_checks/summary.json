@@ -1,0 +1,70 @@
+[
+  {
+    "development_fixture": "renamed_catalog",
+    "counts": {
+      "accepted_attempts": 545,
+      "accepted_batches": 544,
+      "admitted": 500,
+      "delivered": 500,
+      "failed_attempts": 45,
+      "rejected_dispatches": 0,
+      "returned_to_vault": 0,
+      "successful_attempts": 500,
+      "unresolved": 0,
+      "voluntary_hold_breaches": 0
+    },
+    "sla": 0.0,
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79"
+  },
+  {
+    "development_fixture": "rural_holidays",
+    "counts": {
+      "accepted_attempts": 552,
+      "accepted_batches": 552,
+      "admitted": 500,
+      "delivered": 500,
+      "failed_attempts": 52,
+      "rejected_dispatches": 0,
+      "returned_to_vault": 0,
+      "successful_attempts": 500,
+      "unresolved": 0,
+      "voluntary_hold_breaches": 0
+    },
+    "sla": 0.004,
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79"
+  },
+  {
+    "development_fixture": "cluster_burst",
+    "counts": {
+      "accepted_attempts": 552,
+      "accepted_batches": 64,
+      "admitted": 500,
+      "delivered": 500,
+      "failed_attempts": 52,
+      "rejected_dispatches": 0,
+      "returned_to_vault": 0,
+      "successful_attempts": 500,
+      "unresolved": 0,
+      "voluntary_hold_breaches": 0
+    },
+    "sla": 0.004,
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79"
+  },
+  {
+    "development_fixture": "price_speed_variant",
+    "counts": {
+      "accepted_attempts": 552,
+      "accepted_batches": 550,
+      "admitted": 500,
+      "delivered": 500,
+      "failed_attempts": 52,
+      "rejected_dispatches": 0,
+      "returned_to_vault": 0,
+      "successful_attempts": 500,
+      "unresolved": 0,
+      "voluntary_hold_breaches": 0
+    },
+    "sla": 0.0,
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79"
+  }
+]

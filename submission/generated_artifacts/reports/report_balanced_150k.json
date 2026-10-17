@@ -1,0 +1,176 @@
+{
+  "batching": {
+    "accepted_batches": 153274,
+    "average_batch_size": 1.075,
+    "dispatched_shipments": 164727,
+    "efficiency": 0.069527
+  },
+  "costs": {
+    "contingency_exceeded": true,
+    "contingency_threshold_cents": 99000000,
+    "contingency_used": true,
+    "dispatch_cents": 103107655,
+    "over_contingency_cents": 4145655,
+    "over_reference_cents": 13145655,
+    "penalty_cents": 38000,
+    "reference_budget_cents": 90000000,
+    "total_cents": 103145655,
+    "upgrade_cents": 0
+  },
+  "counts": {
+    "accepted_attempts": 164727,
+    "accepted_batches": 153274,
+    "admitted": 150000,
+    "delivered": 149981,
+    "failed_attempts": 14746,
+    "rejected_dispatches": 0,
+    "returned_to_vault": 19,
+    "successful_attempts": 149981,
+    "unresolved": 0,
+    "voluntary_hold_breaches": 0
+  },
+  "diagnostics": {
+    "carrier_dispatch": {
+      "COURIER_EXPRESS": {
+        "accepted_attempts": 103348,
+        "accepted_batches": 94679,
+        "cost_cents": 62195812
+      },
+      "ECO_POST": {
+        "accepted_attempts": 29352,
+        "accepted_batches": 29347,
+        "cost_cents": 8004010
+      },
+      "LOGI_GLOBAL": {
+        "accepted_attempts": 10624,
+        "accepted_batches": 9745,
+        "cost_cents": 11264038
+      },
+      "SUBURBAN_MOTO": {
+        "accepted_attempts": 7462,
+        "accepted_batches": 7461,
+        "cost_cents": 3178740
+      },
+      "VIP_FAST": {
+        "accepted_attempts": 13941,
+        "accepted_batches": 12042,
+        "cost_cents": 18465055
+      }
+    },
+    "dispatch_rejections": {
+      "BATCH_CAPACITY_EXCEEDED": 0,
+      "CAPABILITY_UNSUPPORTED": 0,
+      "DUPLICATE_SHIPMENT": 0,
+      "EMPTY_BATCH": 0,
+      "MIXED_ATTEMPT_NUMBER": 0,
+      "MIXED_DELIVERY_CLUSTER": 0,
+      "MIXED_ZONE": 0,
+      "NO_AVAILABLE_UNIT": 0,
+      "OUTSIDE_OPERATING_WINDOW": 0,
+      "SHIPMENT_NOT_READY": 0,
+      "TERMINAL_SHIPMENT": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_SHIPMENT": 0,
+      "ZONE_UNSUPPORTED": 0
+    },
+    "status_detail": null,
+    "upgrade_rejections": {
+      "INVALID_QUANTITY": 0,
+      "PER_PERIOD_LIMIT_EXCEEDED": 0,
+      "UNKNOWN_CARRIER": 0,
+      "UNKNOWN_UPGRADE": 0,
+      "UNSUPPORTED_UPGRADE": 0
+    }
+  },
+  "failures": {
+    "attempt_failure_rate": 0.089518,
+    "by_reason": {
+      "CUSTOMER_ABSENT": 11732,
+      "INACCESSIBLE_ROUTE": 336,
+      "OPERATIONAL_DELAY": 2678
+    },
+    "delivery_failure_rate": 0.000127
+  },
+  "integrity": {
+    "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79",
+    "protected_files_pristine": true
+  },
+  "lead_time_minutes": {
+    "max": 3447,
+    "mean": 222.805,
+    "p50": 71,
+    "p95": 1566
+  },
+  "rcp": {
+    "by_audience": {
+      "INFLUENCER": {
+        "eligible_recipients": 4190,
+        "submitted_opinions": 3761,
+        "weighted_score": 10.0
+      },
+      "NORMAL": {
+        "eligible_recipients": 138238,
+        "submitted_opinions": 24597,
+        "weighted_score": 9.993
+      },
+      "VIP": {
+        "eligible_recipients": 7572,
+        "submitted_opinions": 5317,
+        "weighted_score": 9.533
+      }
+    },
+    "submitted_opinions": 33675,
+    "total_impact_weight_bps": 653190000,
+    "unweighted_score": 9.921,
+    "weighted_score": 9.921
+  },
+  "resources": {
+    "cpu_seconds": 68.984375,
+    "peak_rss_bytes": 31141888
+  },
+  "scenario": {
+    "admission_end": "2026-04-05T00:00:00-05:00",
+    "scenario_id": "PUBLIC-150K-264538C2",
+    "seed_fingerprint": "sha256:2a6d105f72bdc4d5e1ca9da3171789a846f72a984baddcd1339544e7f7d0f496",
+    "simulation_end": "2026-04-22T18:00:00-05:00",
+    "simulation_start": "2026-01-05T00:00:00-05:00"
+  },
+  "schema_version": "0.4.0",
+  "sla": {
+    "breach_rate": 0.0044,
+    "breached": 660,
+    "by_product": {
+      "BUSINESS": {
+        "admitted": 27084,
+        "breach_rate": 0.000111,
+        "breached": 3
+      },
+      "SME": {
+        "admitted": 33009,
+        "breach_rate": 0.000182,
+        "breached": 6
+      },
+      "STANDARD": {
+        "admitted": 82335,
+        "breach_rate": 0.000109,
+        "breached": 9
+      },
+      "VIP_BLACK": {
+        "admitted": 7572,
+        "breach_rate": 0.084786,
+        "breached": 642
+      }
+    }
+  },
+  "spec_version": "0.4.0",
+  "status": "COMPLETED",
+  "upgrades": {
+    "accepted_decisions": 0,
+    "accepted_quantity_by_type": {
+      "EXPANDED_CAPACITY": 0,
+      "EXTRA_UNIT": 0,
+      "SPEED_SHIFT": 0
+    },
+    "rejected_decisions": 0
+  }
+}

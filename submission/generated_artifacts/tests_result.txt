@@ -1,0 +1,37 @@
+test_monthly_planning_returns_a_tuple (test_candidate_strategy_smoke.CandidateStrategySmokeTest.test_monthly_planning_returns_a_tuple) ... ok
+test_starter_completes_the_public_happy_path (test_candidate_strategy_smoke.CandidateStrategySmokeTest.test_starter_completes_the_public_happy_path) ... ok
+test_all_rejections_terminate_without_losing_work (test_dispatch_contract.DispatchContractTest.test_all_rejections_terminate_without_losing_work) ... ok
+test_calendar_multiplier_applied_once_on_sunday_holiday (test_dispatch_contract.DispatchContractTest.test_calendar_multiplier_applied_once_on_sunday_holiday) ... ok
+test_capacity_splits_batches (test_dispatch_contract.DispatchContractTest.test_capacity_splits_batches) ... ok
+test_catalog_names_and_order_have_no_assumed_roles (test_dispatch_contract.DispatchContractTest.test_catalog_names_and_order_have_no_assumed_roles) ... ok
+test_closed_carrier_not_called (test_dispatch_contract.DispatchContractTest.test_closed_carrier_not_called) ... ok
+test_consumed_unit_is_not_reused (test_dispatch_contract.DispatchContractTest.test_consumed_unit_is_not_reused) ... ok
+test_different_attempts_never_mix (test_dispatch_contract.DispatchContractTest.test_different_attempts_never_mix) ... ok
+test_different_destinations_never_mix (test_dispatch_contract.DispatchContractTest.test_different_destinations_never_mix) ... ok
+test_different_zones_never_mix (test_dispatch_contract.DispatchContractTest.test_different_zones_never_mix) ... ok
+test_earliest_deadline_wins (test_dispatch_contract.DispatchContractTest.test_earliest_deadline_wins) ... ok
+test_empty_tick_does_not_contact_service (test_dispatch_contract.DispatchContractTest.test_empty_tick_does_not_contact_service) ... ok
+test_exact_zone_membership (test_dispatch_contract.DispatchContractTest.test_exact_zone_membership) ... ok
+test_expensive_on_time_carrier_beats_cheap_late_carrier (test_dispatch_contract.DispatchContractTest.test_expensive_on_time_carrier_beats_cheap_late_carrier) ... ok
+test_future_ready_at_is_respected (test_dispatch_contract.DispatchContractTest.test_future_ready_at_is_respected) ... ok
+test_half_up_rounding_is_not_bankers_rounding (test_dispatch_contract.DispatchContractTest.test_half_up_rounding_is_not_bankers_rounding) ... ok
+test_hard_access_uses_compatible_carrier (test_dispatch_contract.DispatchContractTest.test_hard_access_uses_compatible_carrier) ... ok
+test_incompatible_first_does_not_block_others (test_dispatch_contract.DispatchContractTest.test_incompatible_first_does_not_block_others) ... ok
+test_mixed_capability_batch_uses_union_of_requirements (test_dispatch_contract.DispatchContractTest.test_mixed_capability_batch_uses_union_of_requirements) ... ok
+test_no_fleet_preserves_work (test_dispatch_contract.DispatchContractTest.test_no_fleet_preserves_work) ... ok
+test_no_upgrades_requested (test_dispatch_contract.DispatchContractTest.test_no_upgrades_requested) ... ok
+test_nonvip_is_dispatched_without_voluntary_hold (test_dispatch_contract.DispatchContractTest.test_nonvip_is_dispatched_without_voluntary_hold) ... ok
+test_overdue_hold_dispatches_at_first_feasible_tick (test_dispatch_contract.DispatchContractTest.test_overdue_hold_dispatches_at_first_feasible_tick) ... ok
+test_price_rounding_attempt_night_and_metals (test_dispatch_contract.DispatchContractTest.test_price_rounding_attempt_night_and_metals) ... ok
+test_rejection_preserves_work_and_tries_alternative (test_dispatch_contract.DispatchContractTest.test_rejection_preserves_work_and_tries_alternative) ... ok
+test_retry_exact_eligibility_and_new_requirements (test_dispatch_contract.DispatchContractTest.test_retry_exact_eligibility_and_new_requirements) ... ok
+test_retry_queue_orders_equal_ready_times (test_dispatch_contract.DispatchContractTest.test_retry_queue_orders_equal_ready_times) ... ok
+test_same_destination_batches (test_dispatch_contract.DispatchContractTest.test_same_destination_batches) ... ok
+test_success_releases_pending_state (test_dispatch_contract.DispatchContractTest.test_success_releases_pending_state) ... ok
+test_terminal_failure_is_not_requeued (test_dispatch_contract.DispatchContractTest.test_terminal_failure_is_not_requeued) ... ok
+test_urgent_nonvip_not_delayed (test_dispatch_contract.DispatchContractTest.test_urgent_nonvip_not_delayed) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.003s
+
+OK

@@ -1,0 +1,11 @@
+{
+  "validated_at_utc": "2026-10-17T17:08:23.407054+00:00",
+  "candidate_sha256": "6bceaa1c373cd86c7fb216a0120a01d4d3855c76a9db9b243a80368f3b3b9f79",
+  "public_cases_passed": 2,
+  "development_fixtures_passed": 4,
+  "local_tests_passed": 32,
+  "protected_files_verified": 41,
+  "original_downloads_unchanged": true,
+  "root_matches_submission": true,
+  "official_hidden_tests_run": false
+}

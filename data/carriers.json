@@ -1,0 +1,153 @@
+{
+  "carriers": [
+    {
+      "allowed_zones": [
+        "SUBURBANA"
+      ],
+      "base_fee_cents": 280,
+      "batch_capacity": 20,
+      "capabilities": [],
+      "carrier_id": "SUBURBAN_MOTO",
+      "display_name": "Suburban Moto",
+      "fleet_units": 6,
+      "holiday_multiplier_bps": 18000,
+      "night_multiplier_bps": 15000,
+      "operates_holidays": false,
+      "operates_sundays": false,
+      "operational_failure_bps": 240,
+      "pickup_minutes": 45,
+      "speed_kmh": 30,
+      "supported_upgrades": [
+        "EXTRA_UNIT",
+        "EXPANDED_CAPACITY"
+      ],
+      "zone_surcharge_cents": {
+        "SUBURBANA": 140
+      }
+    },
+    {
+      "allowed_zones": [
+        "URBANA",
+        "SUBURBANA",
+        "RURAL"
+      ],
+      "base_fee_cents": 500,
+      "batch_capacity": 12,
+      "capabilities": [],
+      "carrier_id": "COURIER_EXPRESS",
+      "display_name": "Courier Express",
+      "fleet_units": 4,
+      "holiday_multiplier_bps": 18000,
+      "night_multiplier_bps": 15000,
+      "operates_holidays": true,
+      "operates_sundays": true,
+      "operational_failure_bps": 150,
+      "pickup_minutes": 20,
+      "speed_kmh": 55,
+      "supported_upgrades": [
+        "EXTRA_UNIT",
+        "SPEED_SHIFT"
+      ],
+      "zone_surcharge_cents": {
+        "RURAL": 420,
+        "SUBURBANA": 180,
+        "URBANA": 0
+      }
+    },
+    {
+      "allowed_zones": [
+        "URBANA",
+        "SUBURBANA",
+        "RURAL",
+        "REMOTA"
+      ],
+      "base_fee_cents": 680,
+      "batch_capacity": 30,
+      "capabilities": [
+        "HARD_ACCESS"
+      ],
+      "carrier_id": "LOGI_GLOBAL",
+      "display_name": "Logi Global",
+      "fleet_units": 3,
+      "holiday_multiplier_bps": 18000,
+      "night_multiplier_bps": 15000,
+      "operates_holidays": true,
+      "operates_sundays": true,
+      "operational_failure_bps": 110,
+      "pickup_minutes": 30,
+      "speed_kmh": 50,
+      "supported_upgrades": [
+        "EXTRA_UNIT",
+        "SPEED_SHIFT",
+        "EXPANDED_CAPACITY"
+      ],
+      "zone_surcharge_cents": {
+        "REMOTA": 700,
+        "RURAL": 350,
+        "SUBURBANA": 150,
+        "URBANA": 0
+      }
+    },
+    {
+      "allowed_zones": [
+        "URBANA",
+        "SUBURBANA",
+        "RURAL",
+        "REMOTA"
+      ],
+      "base_fee_cents": 1200,
+      "batch_capacity": 8,
+      "capabilities": [
+        "HARD_ACCESS"
+      ],
+      "carrier_id": "VIP_FAST",
+      "display_name": "VIP Fast",
+      "fleet_units": 2,
+      "holiday_multiplier_bps": 10000,
+      "night_multiplier_bps": 10000,
+      "operates_holidays": true,
+      "operates_sundays": true,
+      "operational_failure_bps": 50,
+      "pickup_minutes": 10,
+      "speed_kmh": 80,
+      "supported_upgrades": [
+        "EXTRA_UNIT"
+      ],
+      "zone_surcharge_cents": {
+        "REMOTA": 900,
+        "RURAL": 500,
+        "SUBURBANA": 250,
+        "URBANA": 0
+      }
+    },
+    {
+      "allowed_zones": [
+        "URBANA",
+        "SUBURBANA"
+      ],
+      "base_fee_cents": 220,
+      "batch_capacity": 50,
+      "capabilities": [],
+      "carrier_id": "ECO_POST",
+      "display_name": "Eco Post",
+      "fleet_units": 5,
+      "holiday_multiplier_bps": 10000,
+      "night_multiplier_bps": 15000,
+      "operates_holidays": false,
+      "operates_sundays": false,
+      "operational_failure_bps": 300,
+      "pickup_minutes": 60,
+      "speed_kmh": 25,
+      "supported_upgrades": [
+        "EXTRA_UNIT",
+        "EXPANDED_CAPACITY"
+      ],
+      "zone_surcharge_cents": {
+        "SUBURBANA": 120,
+        "URBANA": 0
+      }
+    }
+  ],
+  "note": "Escenario generado; IDs y orden no tienen semántica.",
+  "schema_version": "0.2.0"
+}
